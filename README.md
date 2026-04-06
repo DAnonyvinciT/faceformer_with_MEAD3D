@@ -9,27 +9,27 @@
 ## 与 FaceFormer 的主要改动点
 
 1. 数据集适配方式
-- 支持使用 `--dataset .` 将 `modelmead` 当前目录作为数据根目录。
+- 支持使用 `--dataset .` 。
 - 数据目录组织围绕 `wav`、`vertices_npy`、`templates.pkl` 与 `vertices_npy_flat` 展开。
 
 2. 音频-顶点对齐逻辑
-- 在 `modelmead/faceformer.py` 中，`dataset=="."` 时采用与 BIWI 同类的 2:1 对齐策略（每帧顶点对应两个音频步）。
+- 在 `faceformer.py` 中，`dataset=="."` 时采用与 BIWI 同类的 2:1 对齐策略（每帧顶点对应两个音频步）。
 - 增加长度边界处理，避免音频特征长度与顶点帧长度不一致导致训练不稳定。
 
 3. 数据加载与切分策略
-- `modelmead/data_loader.py` 采用流式读取，避免一次性加载全量样本造成内存压力。
+- `data_loader.py` 采用流式读取，避免一次性加载全量样本造成内存压力。
 - 增加 neutral-only 过滤（`emo=0` 且 `level=0`）。-增加仅中性过滤（`emo=0`且`level=0`）。
 - 增加说话人内 80/20 动态切分规则（训练/验证测试）。
 - 增加音频缓存优先读取机制：优先读取 `audio_cache`，缺失时回退到在线 `librosa + processor` 处理。
 
 4. 新增数据预处理脚本
-- `modelmead/process_mead3d_data.py`：创建模板、顶点、音频软链接。
-- `modelmead/preprocess_mead3d_flatten.py`：将顶点由 `(T, V, 3)` 展平为 `(T, V*3)`。
-- `modelmead/precompute_audio_cache.py`：预计算音频输入缓存，降低训练时重复计算开销。
+- `process_mead3d_data.py`：创建模板、顶点、音频软链接。
+- `preprocess_mead3d_flatten.py`：将顶点由 `(T, V, 3)` 展平为 `(T, V*3)`。
+- `precompute_audio_cache.py`：预计算音频输入缓存，降低训练时重复计算开销。
 
 5. 训练与推理入口脚本
-- `modelmead/train_full.sh`：modelmead 的训练参数模板。
-- `modelmead/demo_mead.sh`：modelmead 的推理参数模板。
+- `train_full.sh`：modelmead 的训练参数模板。
+- `demo_mead.sh`：modelmead 的推理参数模板。
 
 ## 快速开始
 
