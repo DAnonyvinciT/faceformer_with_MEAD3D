@@ -82,5 +82,11 @@ bash demo_mead.sh
 感谢faceformer项目提供基本模型
 感谢Probtalk3D提供MEAD3D数据集的获取与处理方式
 
+## 赞助
+如果这个项目对你有帮助的话，可以请我喝杯咖啡
+<p align="center">
+<img src=".github/收款码.jpg" width="70%" />
+</p>
+
 
 
