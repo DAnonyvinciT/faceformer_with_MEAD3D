@@ -1,10 +1,10 @@
-# modelmead
+# faceformer_with_MEAD3D
 
-modelmead 是 FaceFormer 的衍生项目，核心目标是为 FaceFormer 增加 MEAD3D 数据集支持。并使用较新的python和pytorch版本，兼容50系以上显卡。
+ FaceFormer 的衍生项目，核心目标是为 FaceFormer 增加 MEAD3D 数据集支持。并使用较新的python和pytorch版本，兼容50系以上显卡。
 
 ## 项目定位
 
-相对原始 FaceFormer（主要面向 VOCASET 与 BIWI），modelmead 保留了原模型主体结构，同时补齐了在 MEAD3D 上可直接训练、推理和渲染的完整工程流程。
+相对原始 FaceFormer（主要面向 VOCASET 与 BIWI），modelmead 保留了原模型主体结构，同时补齐了在 MEAD3D 上可直接训练、推理和渲染的完整工程流程。与最初的 FaceFormer（主要面向 VOCASET 与 BIWI）相比，modelmead 保留了原模型的主体结构，同时完善了可在 MEAD3D 上直接进行训练、推理和渲染的完整工程流程。相较于最初的 FaceFormer（主要面向 VOCASET 与 BIWI），modelmead 保留了原模型的主体结构，同时完善了可在 MEAD3D 上直接进行训练、推理和渲染的完整工程流程。相较于最初的 FaceFormer（主要面向 VOCASET 与 BIWI），modelmead 保留了原模型的主体结构，同时完善了可在 MEAD3D 上直接进行训练、推理和渲染的完整工程流程。与最初的 FaceFormer（主要面向 VOCASET 与 BIWI）相比，modelmead 保留了原模型的主体结构，同时完善了可在 MEAD3D 上直接进行训练、推理和渲染的完整工程流程。
 
 ## 与 FaceFormer 的主要改动点
 
@@ -18,7 +18,7 @@ modelmead 是 FaceFormer 的衍生项目，核心目标是为 FaceFormer 增加 
 
 3. 数据加载与切分策略
 - `modelmead/data_loader.py` 采用流式读取，避免一次性加载全量样本造成内存压力。
-- 增加 neutral-only 过滤（`emo=0` 且 `level=0`）。
+- 增加 neutral-only 过滤（`emo=0` 且 `level=0`）。-增加仅中性过滤（`emo=0`且`level=0`）。
 - 增加说话人内 80/20 动态切分规则（训练/验证测试）。
 - 增加音频缓存优先读取机制：优先读取 `audio_cache`，缺失时回退到在线 `librosa + processor` 处理。
 
