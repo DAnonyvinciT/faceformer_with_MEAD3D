@@ -85,7 +85,7 @@ bash demo_mead.sh
 ## 赞助
 如果这个项目对你有帮助的话，可以请我喝杯咖啡
 <p align="center">
-<img src=".github/收款码.jpg" width="70%" />
+<img src=".github/收款码.jpg" width="10%" />
 </p>
 
 
