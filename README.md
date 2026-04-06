@@ -78,5 +78,9 @@ bash demo_mead.sh
 - 渲染链路额外依赖：
   - `ffmpeg`（系统命令）
 
+## 致谢
+感谢faceformer项目提供基本模型
+感谢Probtalk3D提供MEAD3D数据集的获取与处理方式
+
 
 
