@@ -28,8 +28,8 @@
 - `precompute_audio_cache.py`：预计算音频输入缓存，降低训练时重复计算开销。
 
 5. 训练与推理入口脚本
-- `train_full.sh`：modelmead 的训练参数模板。
-- `demo_mead.sh`：modelmead 的推理参数模板。
+- `train_full.sh`：训练参数模板。
+- `demo_mead.sh`：推理参数模板。
 
 ## 快速开始
 
@@ -79,7 +79,7 @@ bash demo_mead.sh
   - `ffmpeg`（系统命令）
 
 ## 致谢
-感谢faceformer项目提供基本模型
+感谢faceformer项目提供基本模型；
 感谢Probtalk3D提供MEAD3D数据集的获取与处理方式
 
 ## 赞助
